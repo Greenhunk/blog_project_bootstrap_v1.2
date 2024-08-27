@@ -29,9 +29,10 @@ def contact():
         message = request.form["message"]
 
         print(f"{name}\n{email}\n{phone}\n{message}")
-        return "<h1>Successfully sent your message.</h1>"
+        # return "<h1>Successfully sent your message.</h1>"
+        return render_template("contact.html", msg_sent = True)
     else:
-      return render_template("contact.html")
+      return render_template("contact.html", msg_sent = False)
 
 
 # @app.route("/form-entry", methods= ["POST"])
